@@ -1,0 +1,28 @@
+{
+  "manifest_version": 2,
+  "name":    "Create Color Pallete",
+  "version": "0.1",
+  "offline_enabled": true,
+
+  "background": {
+    "persistent": false,
+    "scripts": ["jquery-3.1.1.min.js", "background.js"]
+  },
+
+  "content_scripts": [{
+    "matches":    ["<all_urls>"],
+    "js":         ["content.js"],
+    "run_at":     "document_idle",
+    "all_frames": false
+  }],
+
+  "page_action": {
+    "default_title": "Create Color Palette",
+    "default_icon": "16x16.png",
+    "default_popup": "popup.html"
+  },
+  "permissions": [
+    "clipboardRead",
+    "clipboardWrite"
+  ]
+}
